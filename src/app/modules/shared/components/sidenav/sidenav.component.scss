@@ -1,0 +1,41 @@
+:host {
+  width: calc(100vw - 48px);
+  display: flex;
+  flex-direction: column;
+
+  header {
+    height: 150px;
+    background: pink;
+  }
+
+  .content {
+    padding: 1rem;
+
+    .title {
+      margin: .5rem 0;
+      font-weight: bold;
+    }
+
+    .active {
+      background: var(--sidenav-active-background);
+      color: var(--sidenav-active-color);
+      border-radius: 8px;
+    }
+  }
+}
+
+
+cdk-tree-node {
+  display: flex;
+  height: 44px;
+  justify-content: start;
+  align-items: center;
+}
+
+.resetCategories {
+  height: 44px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 40px;
+}

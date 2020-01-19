@@ -1,0 +1,9 @@
+<div class="prefix" (click)="onBack()" *ngIf="hasBackBtn; else btnPlaceholder">
+  <i class="icon ion-ios-arrow-back"></i>
+</div>
+<div class="title">{{ title }}</div>
+<div class="suffix" (click)="onCart()"><i class="icon ion-ios-cart"></i></div>
+
+<ng-template #btnPlaceholder>
+  <div class="prefix"></div>
+</ng-template>

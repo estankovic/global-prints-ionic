@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  background: var(--app-color);
+  color: var(--on-app-color);
+  justify-content: space-between;
+  align-items: center;
+
+  height: var(--toolbar-height);
+
+  box-shadow: var(--toolbar-shadow);
+
+  .prefix,
+  .suffix {
+    margin: 8px 12px;
+    font-size: 24px;
+    width: var(--icon-size);
+    text-align: center;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+}

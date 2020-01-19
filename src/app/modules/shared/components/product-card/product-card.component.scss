@@ -1,0 +1,27 @@
+:host {
+
+  --margin: 8px;
+  --padding: 4px;
+
+
+  background: var(--card-background);
+  margin: 0.5rem;
+  display: inline-block;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+
+  .text-bubble {
+    position: absolute;
+    width: calc(100% - var(--margin) * 2 - var(--padding) * 2);
+    bottom: 0;
+    background: var(--card-title-background);
+    color: var(--on-background-color);
+    margin: var(--margin);
+    border-radius: var(--radius);
+    padding: var(--padding);
+    font-weight: bold;
+    font-size: var(--font-size);
+  }
+
+}

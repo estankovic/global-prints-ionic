@@ -1,0 +1,7 @@
+<button mat-icon-button class="minus" (click)="decrease()">
+  <mat-icon>remove</mat-icon>
+</button>
+<div class="count"><input type="number" [(ngModel)]="value" (ngModelChange)="onChange($event)"/></div>
+<button mat-icon-button class="plus" (click)="increase()">
+  <mat-icon>add</mat-icon>
+</button>

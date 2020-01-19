@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+mat-dialog-content {
+  padding: 0;
+  margin: 0;
+
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 8px;
+
+    font-size: var(--icon-size);
+    opacity: .66;
+    cursor: pointer;
+  }
+
+
+  .image {
+    height: 225px;
+
+    background: var(--dialog-image-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 90%;
+      box-shadow: var(--dialog-image-shadow);
+    }
+  }
+
+  .content {
+    padding: 12px;
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+  }
+
+  .submit {
+    margin: 12px;
+    width: calc(100% - 24px);
+  }
+}

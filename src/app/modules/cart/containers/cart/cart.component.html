@@ -1,0 +1,18 @@
+<gp-toolbar title="Cart"></gp-toolbar>
+
+<div class="content">
+  <div class="cart-container">
+    <gp-cart-item
+      *ngFor="let c of cartItems$ | async"
+      [product]="c"
+      (delete)="onDelete($event)"
+      (countChange)="onCountChange($event)"
+    ></gp-cart-item>
+
+    <div class="make-order">
+      <button>Make Order</button>
+    </div>
+  </div>
+</div>
+
+<!--<gp-bottom-navigation></gp-bottom-navigation>-->

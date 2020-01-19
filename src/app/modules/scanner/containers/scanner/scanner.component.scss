@@ -1,0 +1,66 @@
+:host {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: block;
+
+  .content {
+    overflow: scroll;
+    height: calc(100vh - var(--toolbar-height) - var(--bottom-navbar-height));
+
+    .scanner-container {
+      height: 100%;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      .video-wrapper {
+        position: relative;
+
+        height: auto;
+
+        //flex: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .inset-shadow {
+          position: absolute;
+          z-index: 99;
+          box-shadow: inset 0 0 18px 26px var(--background-color);
+        }
+
+        .overlay {
+          position: absolute;
+
+          //width: 100%;
+          //height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .square {
+            //background: red;
+            opacity: 0.5;
+
+            border: 4px solid red;
+
+            height: 110px;
+            width: 110px;
+            z-index: 999;
+          }
+        }
+
+        video {
+          width: auto;
+          height: auto;
+          max-width: calc(100% - 0px);
+          background: #ccc; /* Random BG colour for unloaded video elements */
+        }
+      }
+    }
+  }
+}

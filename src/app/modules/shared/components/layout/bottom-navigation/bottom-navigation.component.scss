@@ -1,0 +1,10 @@
+:host {
+  font-size: var(--icon-size);
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-color);
+  height: var(--bottom-navbar-height);
+  color: var(--on-app-color);
+}

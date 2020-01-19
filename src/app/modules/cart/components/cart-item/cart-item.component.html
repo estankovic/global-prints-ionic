@@ -1,0 +1,8 @@
+<div class="image"><img [src]="product.image" [alt]="product.name" /></div>
+<div class="content">
+  <h5>{{product.name}}</h5>
+  <gp-counter [count]="product.inCart" (countChanged)="onCountChange($event)"></gp-counter>
+</div>
+<div class="action">
+  <button mat-icon-button (click)="onDelete(this.product)"><mat-icon>delete</mat-icon></button>
+</div>

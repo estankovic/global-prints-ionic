@@ -1,0 +1,27 @@
+<mat-dialog-content>
+  <mat-spinner *ngIf="!(currentProductLoaded$ | async)"></mat-spinner>
+
+  <ng-container *ngIf="currentProduct$ | async as product">
+
+    <div class="close" (click)="close()"><i class="icon ion-ios-close-circle"></i></div>
+
+    <div class="image">
+      <img [src]="product.image" [alt]="product.name" />
+    </div>
+    <div class="content">
+      <h4>{{ product.name }}</h4>
+      <gp-counter
+        [count]="product.inCart"
+        (countChanged)="countChanged($event)"
+      ></gp-counter>
+    </div>
+    <button
+      mat-raised-button
+      color="accent"
+      class="submit"
+      (click)="addToCart(product)"
+    >
+      Add to Cart
+    </button>
+  </ng-container>
+</mat-dialog-content>

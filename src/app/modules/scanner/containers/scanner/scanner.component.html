@@ -1,0 +1,25 @@
+<gp-toolbar title="Scanner" [hasBackBtn]="false"></gp-toolbar>
+
+<div class="content">
+  <div class="scanner-container">
+    <div class="video-wrapper">
+      <div class="overlay">
+        <div class="square"></div>
+      </div>
+      <div
+        class="inset-shadow"
+        [ngStyle]="{
+          width: video.clientWidth + 'px',
+          height: video.clientHeight + 2 + 'px'
+        }"
+      ></div>
+      <video
+        muted
+        playsinline
+        #video
+      ></video>
+    </div>
+  </div>
+</div>
+
+<gp-bottom-navigation></gp-bottom-navigation>
