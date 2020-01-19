@@ -62,3 +62,10 @@ body {
 
   --bottom-navbar-height: 48px;
 }
+
+mat-dialog-container.mat-dialog-container {
+  padding: 0;
+  background: var(--dialog-background);
+  color: var(--on-app-color);
+}
+

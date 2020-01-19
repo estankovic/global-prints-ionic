@@ -48,7 +48,7 @@ export class ProductListComponent implements OnInit {
   }
 
   openDialog(id: string) {
-    this.router.navigate(['/products', id]);
+    this.router.navigate(['tabs', 'products', id]);
   }
 
   loadNext() {
