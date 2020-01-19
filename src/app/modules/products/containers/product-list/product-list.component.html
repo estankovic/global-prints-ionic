@@ -1,25 +1,24 @@
-<gp-toolbar title="Products" [hasBackBtn]="false"></gp-toolbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<div
-  class="content"
-  gpScrollPositionRestore="product-list"
+<!--<gp-toolbar title="Products" [hasBackBtn]="false"></gp-toolbar>-->
+
+<ion-content
   infiniteScroll
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="50"
   (scrolled)="loadNext()"
-  [scrollWindow]="false"
 >
-  <div
-    class="loading"
-    *ngIf="isLoading$ | async"
-  >
+  <div class="loading" *ngIf="isLoading$ | async">
     <mat-spinner [diameter]="40"></mat-spinner>
   </div>
   <ng-container *ngIf="products$ | async as products">
-    <div
-      class="product-container"
-      *ngIf="products.length"
-    >
+    <div class="product-container" *ngIf="products.length">
       <gp-product-card
         matRipple
         *ngFor="let p of products"
@@ -28,13 +27,18 @@
       ></gp-product-card>
     </div>
 
-    <div
-      class="no-items"
-      *ngIf="!products.length && (isLoaded$ | async)"
-    >
+    <div class="no-items" *ngIf="!products.length && (isLoaded$ | async)">
       No items here
     </div>
   </ng-container>
-</div>
+</ion-content>
 
-<gp-bottom-navigation></gp-bottom-navigation>
+<!--<div-->
+<!--  class="content"-->
+<!--  gpScrollPositionRestore="product-list"-->
+<!--  infiniteScroll-->
+<!--  [infiniteScrollDistance]="2"-->
+<!--  [infiniteScrollThrottle]="50"-->
+<!--  (scrolled)="loadNext()"-->
+<!--  [scrollWindow]="false"-->
+<!--&gt;</div>-->

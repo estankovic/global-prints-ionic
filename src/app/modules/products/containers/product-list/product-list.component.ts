@@ -52,6 +52,9 @@ export class ProductListComponent implements OnInit {
   }
 
   loadNext() {
+
+    console.log('next')
+
     this.store
       .pipe(
         select($lastProduct),

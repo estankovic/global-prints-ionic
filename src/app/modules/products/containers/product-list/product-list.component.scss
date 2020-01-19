@@ -1,14 +1,14 @@
 :host {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: block;
+  //height: 100vh;
+  //width: 100vw;
+  //overflow: hidden;
+  //display: block;
 
-  .content {
-    overflow: scroll;
-    height: calc(100vh - var(--toolbar-height) - var(--bottom-navbar-height));
+  ion-content {
+    //overflow: scroll;
+    //height: calc(100vh - var(--toolbar-height) - var(--bottom-navbar-height));
 
-    position: relative;
+    //position: relative;
 
     .loading {
       position: fixed;

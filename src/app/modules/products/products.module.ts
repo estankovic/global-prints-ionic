@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatDialogModule, MatIconModule, MatProgressSpinnerModule, MatRippleModule } from '@angular/material';
+import { IonicModule } from '@ionic/angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -27,6 +28,7 @@ import { reducers } from './store/reducers';
     MatProgressSpinnerModule,
     InfiniteScrollModule,
     MatRippleModule,
+    IonicModule,
   ],
   entryComponents: [
     ProductDetailComponent
