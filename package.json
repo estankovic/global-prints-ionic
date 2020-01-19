@@ -32,6 +32,7 @@
     "@ngrx/router-store": "^8.6.0",
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
+    "cordova-plugin-qrscanner": "^3.0.1",
     "core-js": "^2.5.4",
     "firebase": "^7.7.0",
     "flat-to-nested": "^1.1.0",
@@ -67,5 +68,10 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-qrscanner": {}
+    }
+  }
 }
