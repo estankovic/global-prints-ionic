@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
     "@angular/common": "~8.1.2",
     "@angular/core": "~8.1.2",
@@ -32,6 +33,7 @@
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
     "core-js": "^2.5.4",
+    "firebase": "^7.7.0",
     "flat-to-nested": "^1.1.0",
     "ngx-infinite-scroll": "^8.0.1",
     "qr-scanner": "^1.1.1",
