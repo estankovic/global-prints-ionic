@@ -64,4 +64,9 @@ export class ProductListComponent implements OnInit {
         this.store.dispatch(loadProducts({latestProductID: product.id}));
       });
   }
+
+  onCart() {
+    this.router.navigate(['cart']);
+  }
+
 }

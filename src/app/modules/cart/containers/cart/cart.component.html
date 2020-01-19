@@ -1,6 +1,19 @@
-<gp-toolbar title="Cart"></gp-toolbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="onBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-<div class="content">
+    <ion-title>
+      Cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen>
   <div class="cart-container">
     <gp-cart-item
       *ngFor="let c of cartItems$ | async"
@@ -13,6 +26,6 @@
       <button>Make Order</button>
     </div>
   </div>
-</div>
+</ion-content>
 
 <!--<gp-bottom-navigation></gp-bottom-navigation>-->

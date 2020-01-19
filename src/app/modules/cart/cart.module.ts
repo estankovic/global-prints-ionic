@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule, MatListModule, } from '@angular/material';
+import { IonicModule } from '@ionic/angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '../shared/shared.module';
@@ -24,6 +25,7 @@ import { reducers } from './store/reducers';
       metaReducers: [storageMetaReducer],
     }),
     EffectsModule.forFeature([]),
+    IonicModule,
   ],
 })
 export class CartModule {}

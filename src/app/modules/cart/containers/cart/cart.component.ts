@@ -1,8 +1,12 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { CartProductModel } from '../../../shared/models/product.model';
-import { deleteCartProduct, updateCartProduct, } from '../../store/actions/cart.actions';
+import {
+  deleteCartProduct,
+  updateCartProduct,
+} from '../../store/actions/cart.actions';
 import { $cartList } from '../../store/selectors/cart.selectors';
 import { CartModuleState } from '../../store/states';
 
@@ -16,7 +20,10 @@ export class CartComponent implements OnInit {
     select($cartList),
   );
 
-  constructor(private readonly store: Store<CartModuleState>) {}
+  constructor(
+    private readonly store: Store<CartModuleState>,
+    private readonly location: Location,
+  ) {}
 
   ngOnInit() {}
 
@@ -30,5 +37,9 @@ export class CartComponent implements OnInit {
         product,
       }),
     );
+  }
+
+  onBack() {
+    this.location.back();
   }
 }

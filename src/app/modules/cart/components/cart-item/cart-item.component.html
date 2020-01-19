@@ -1,6 +1,6 @@
 <div class="image"><img [src]="product.image" [alt]="product.name" /></div>
 <div class="content">
-  <h5>{{product.name}}</h5>
+  <strong>{{product.name}}</strong>
   <gp-counter [count]="product.inCart" (countChanged)="onCountChange($event)"></gp-counter>
 </div>
 <div class="action">
