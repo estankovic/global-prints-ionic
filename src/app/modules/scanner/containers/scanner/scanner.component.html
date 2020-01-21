@@ -1,25 +1,33 @@
-<gp-toolbar title="Scanner" [hasBackBtn]="false"></gp-toolbar>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      QR Scanner
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<div class="content">
-  <div class="scanner-container">
-    <div class="video-wrapper">
-      <div class="overlay">
-        <div class="square"></div>
-      </div>
-      <div
-        class="inset-shadow"
-        [ngStyle]="{
-          width: video.clientWidth + 'px',
-          height: video.clientHeight + 2 + 'px'
-        }"
-      ></div>
-      <video
-        muted
-        playsinline
-        #video
-      ></video>
-    </div>
-  </div>
-</div>
+<!--<gp-toolbar title="Scanner" [hasBackBtn]="false"></gp-toolbar>-->
 
-<gp-bottom-navigation></gp-bottom-navigation>
+<!--<div class="content">-->
+<!--  <div class="scanner-container">-->
+<!--    <div class="video-wrapper">-->
+<!--      <div class="overlay">-->
+<!--        <div class="square"></div>-->
+<!--      </div>-->
+<!--      <div-->
+<!--        class="inset-shadow"-->
+<!--        [ngStyle]="{-->
+<!--          width: video.clientWidth + 'px',-->
+<!--          height: video.clientHeight + 2 + 'px'-->
+<!--        }"-->
+<!--      ></div>-->
+<!--      <video-->
+<!--        muted-->
+<!--        playsinline-->
+<!--        #video-->
+<!--      ></video>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<gp-bottom-navigation></gp-bottom-navigation>-->
