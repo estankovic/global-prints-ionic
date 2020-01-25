@@ -18,17 +18,7 @@
   </ion-toolbar>
 </ion-header>
 
-<!--<gp-toolbar title="Products" [hasBackBtn]="false"></gp-toolbar>-->
-
-<ion-content
-  infiniteScroll
-  [infiniteScrollDistance]="2"
-  [infiniteScrollThrottle]="50"
-  (scrolled)="loadNext()"
->
-  <div class="loading" *ngIf="isLoading$ | async">
-    <mat-spinner [diameter]="40"></mat-spinner>
-  </div>
+<ion-content>
   <ng-container *ngIf="products$ | async as products">
     <div class="product-container" *ngIf="products.length">
       <gp-product-card
@@ -43,14 +33,11 @@
       No items here
     </div>
   </ng-container>
-</ion-content>
 
-<!--<div-->
-<!--  class="content"-->
-<!--  gpScrollPositionRestore="product-list"-->
-<!--  infiniteScroll-->
-<!--  [infiniteScrollDistance]="2"-->
-<!--  [infiniteScrollThrottle]="50"-->
-<!--  (scrolled)="loadNext()"-->
-<!--  [scrollWindow]="false"-->
-<!--&gt;</div>-->
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadNext($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

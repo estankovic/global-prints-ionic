@@ -57,13 +57,14 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['tabs', 'products', id]);
   }
 
-  loadNext() {
-    console.log('next');
+  loadNext(e) {
+    console.log('next', e);
 
     this.store
       .pipe(
         select($lastProduct),
         take(1),
+        filter(Boolean)
       )
       .subscribe(product => {
         this.store.dispatch(loadProducts({ latestProductID: product.id }));
