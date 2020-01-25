@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule, MatListModule, MatTreeModule } from '@angular/material';
+import { IonicModule } from '@ionic/angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './components/counter/counter.component';
@@ -43,6 +44,7 @@ import { reducers } from './store/reducers';
     MatListModule,
     MatTreeModule,
     CdkTreeModule,
+    IonicModule,
   ],
   providers: [ScrollPositionService, CategoryService],
 })

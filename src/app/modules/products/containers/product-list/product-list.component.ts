@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { select, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { delay, filter, switchMap, take } from 'rxjs/operators';
 import { ProductModel } from '../../../shared/models/product.model';
 import { loadProducts } from '../../store/actions/products.actions';
-import { $lastProduct, $productList, $productListLoaded, $productListLoading, } from '../../store/selectors/product.selectors';
+import {
+  $lastProduct,
+  $productList,
+  $productListLoaded,
+  $productListLoading,
+} from '../../store/selectors/product.selectors';
 import { ProductModuleState } from '../../store/states';
 
 @Component({
@@ -32,6 +38,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private readonly store: Store<ProductModuleState>,
     private readonly router: Router,
+    private readonly menu: MenuController,
   ) {
     this.store
       .pipe(
@@ -40,20 +47,18 @@ export class ProductListComponent implements OnInit {
         filter(loaded => !loaded),
       )
       .subscribe(() =>
-        this.store.dispatch(loadProducts({latestProductID: ''})),
+        this.store.dispatch(loadProducts({ latestProductID: '' })),
       );
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   openDialog(id: string) {
     this.router.navigate(['tabs', 'products', id]);
   }
 
   loadNext() {
-
-    console.log('next')
+    console.log('next');
 
     this.store
       .pipe(
@@ -61,7 +66,7 @@ export class ProductListComponent implements OnInit {
         take(1),
       )
       .subscribe(product => {
-        this.store.dispatch(loadProducts({latestProductID: product.id}));
+        this.store.dispatch(loadProducts({ latestProductID: product.id }));
       });
   }
 
@@ -69,4 +74,10 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['cart']);
   }
 
+  async onMenu() {
+    if (!(await this.menu.isOpen('product-categories'))) {
+      await this.menu.enable(true, 'product-categories');
+      await this.menu.open('product-categories');
+    }
+  }
 }

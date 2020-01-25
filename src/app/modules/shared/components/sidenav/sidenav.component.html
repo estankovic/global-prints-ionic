@@ -1,57 +1,63 @@
-<header>
-  HERE GOES ROUTE PROFILE
-</header>
+<ion-menu side="start" menuId="product-categories" content-id="main">
+  <ion-content>
 
-<div class="content">
-  HERE GOE ORDERS BUTTON
+    <header>
+      HERE GOES ROUTE PROFILE
+    </header>
 
-  <div class="title">Categories</div>
+    <div class="content">
+      HERE GOE ORDERS BUTTON
 
-  <div
-    class="resetCategories"
-    (click)="setCategory('')"
-  >
-    All
-  </div>
-  <cdk-tree
-    [dataSource]="dataSource"
-    [treeControl]="treeControl"
-  >
-    <!-- This is the tree node template for leaf nodes -->
-    <cdk-tree-node
-      *cdkTreeNodeDef="let node"
-      cdkTreeNodePadding
-      cdkTreeNodePaddingIndent="10"
-      [class.active]="isActive(node.absolutePath) | async"
-    >
-      <!-- use a disabled button to provide padding for tree leaf -->
-      <button
-        mat-icon-button
-        disabled
-      ></button>
-      <span (click)="setCategory(node.absolutePath)">
-        {{ node.displayName }}
-      </span>
-    </cdk-tree-node>
-    <!-- This is the tree node template for expandable nodes -->
-    <cdk-tree-node
-      *cdkTreeNodeDef="let node; when: hasChild"
-      cdkTreeNodePadding
-      cdkTreeNodePaddingIndent="10"
-      [class.active]="isActive(node.absolutePath) | async"
-    >
-      <button
-        mat-icon-button
-        cdkTreeNodeToggle
-        [attr.aria-label]="'toggle ' + node.displayName"
+      <div class="title">Categories</div>
+
+      <div
+        class="resetCategories"
+        (click)="setCategory('')"
       >
-        <mat-icon class="mat-icon-rtl-mirror">
-          {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
-        </mat-icon>
-      </button>
-      <span (click)="setCategory(node.absolutePath)">
-        {{ node.displayName }}
-      </span>
-    </cdk-tree-node>
-  </cdk-tree>
-</div>
+        All
+      </div>
+      <cdk-tree
+        [dataSource]="dataSource"
+        [treeControl]="treeControl"
+      >
+        <!-- This is the tree node template for leaf nodes -->
+        <cdk-tree-node
+          *cdkTreeNodeDef="let node"
+          cdkTreeNodePadding
+          cdkTreeNodePaddingIndent="10"
+          [class.active]="isActive(node.absolutePath) | async"
+        >
+          <!-- use a disabled button to provide padding for tree leaf -->
+          <button
+            mat-icon-button
+            disabled
+          ></button>
+          <span (click)="setCategory(node.absolutePath)">
+            {{ node.displayName }}
+          </span>
+        </cdk-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <cdk-tree-node
+          *cdkTreeNodeDef="let node; when: hasChild"
+          cdkTreeNodePadding
+          cdkTreeNodePaddingIndent="10"
+          [class.active]="isActive(node.absolutePath) | async"
+        >
+          <button
+            mat-icon-button
+            cdkTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.displayName"
+          >
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+          </button>
+          <span (click)="setCategory(node.absolutePath)">
+            {{ node.displayName }}
+          </span>
+        </cdk-tree-node>
+      </cdk-tree>
+    </div>
+
+  </ion-content>
+</ion-menu>
