@@ -19,6 +19,7 @@ export class CartEffect {
       ofType(placeOrder),
       map(item => item.products),
       map<CartProductModel[], OrderRequestPayload>(products => {
+        const now = new Date();
         return {
           routeId: 'route_2020_1',
           status: OrderStatus.REQUESTED,
@@ -27,6 +28,8 @@ export class CartEffect {
             orderCount: p.inCart,
             shippedCount: 0,
           })),
+          createAt: now,
+          modifiedAt: now,
         };
       }),
       switchMap(order =>
