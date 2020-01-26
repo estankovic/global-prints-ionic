@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { OrderRequestPayload } from '../../../shared/models/order.model';
 import { CartProductModel } from '../../../shared/models/product.model';
 
 export const updateCartProduct = createAction(
@@ -23,9 +24,8 @@ export const placeOrder = createAction(
 );
 
 export const placeOrderSuccess = createAction(
-  '[Cart] - Place Order',
+  '[Cart] - Place Order Success',
   props<{
-    products: CartProductModel[];
-    // should return order instead
+    order: OrderRequestPayload;
   }>(),
 );

@@ -15,16 +15,21 @@
 
 <ion-content fullscreen>
   <div class="cart-container">
-    <gp-cart-item
-      *ngFor="let c of cartItems$ | async"
-      [product]="c"
-      (delete)="onDelete($event)"
-      (countChange)="onCountChange($event)"
-    ></gp-cart-item>
+    <ng-container *ngIf="cartItems$ | async as cartItems">
+      <gp-cart-item
+        *ngFor="let c of cartItems"
+        [product]="c"
+        (delete)="onDelete($event)"
+        (countChange)="onCountChange($event)"
+      ></gp-cart-item>
 
-    <div class="make-order">
-      <button>Make Order</button>
-    </div>
+      <div class="make-order">
+        <ion-button (click)="onOrder(cartItems)">Make Order</ion-button>
+      </div>
+    </ng-container>
+
+
+
   </div>
 </ion-content>
 

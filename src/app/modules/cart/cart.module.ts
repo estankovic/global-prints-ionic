@@ -10,6 +10,8 @@ import { storageMetaReducer } from '../shared/store/reducers/cart-local-storage-
 import { CartRoutingModule } from './cart-routing.module';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CartComponent } from './containers/cart/cart.component';
+import { OrderService } from './services/order.service';
+import { effects } from './store/effects';
 import { reducers } from './store/reducers';
 
 @NgModule({
@@ -24,8 +26,12 @@ import { reducers } from './store/reducers';
     StoreModule.forFeature('cart', reducers, {
       metaReducers: [storageMetaReducer],
     }),
-    EffectsModule.forFeature([]),
+    EffectsModule.forFeature(effects),
     IonicModule,
   ],
+  providers: [
+    OrderService
+  ]
+
 })
 export class CartModule {}
