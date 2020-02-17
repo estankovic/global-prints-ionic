@@ -1,0 +1,30 @@
+:host {
+  ::ng-deep .mat-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+
+      margin-bottom: 1rem;
+
+      .label {
+        font-weight: bold;
+      }
+
+      &.status {
+        .value {
+          color: green;
+        }
+      }
+
+    }
+  }
+
+}

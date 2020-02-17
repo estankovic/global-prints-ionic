@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-content>
+    <div class="col">
+      <div class="item">
+        <div class="label">Route Name:</div>
+        <div class="value">{{ order.routeId }}</div>
+      </div>
+
+      <div class="item">
+        <div class="label">Date Issued</div>
+        <div class="value">{{ order.createAt }}</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="item status">
+        <div class="label">Status</div>
+        <div class="value">{{ order.status }}</div>
+      </div>
+
+      <div class="item">
+        <div class="label">Products in order</div>
+        <div class="value">{{ order.products.length }}</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

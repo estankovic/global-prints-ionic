@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      My Orders
+    </ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="onMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="order-container">
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+    <gp-order-card></gp-order-card>
+  </div>
+
+
+<!--  <ng-container *ngIf="products$ | async as products">-->
+<!--    <div class="product-container" *ngIf="products.length">-->
+<!--      <gp-product-card-->
+<!--        matRipple-->
+<!--        *ngFor="let p of products"-->
+<!--        [product]="p"-->
+<!--        (click)="openDialog(p.id)"-->
+<!--      ></gp-product-card>-->
+<!--    </div>-->
+
+<!--    <div class="no-items" *ngIf="!products.length && (isLoaded$ | async)">-->
+<!--      No items here-->
+<!--    </div>-->
+<!--  </ng-container>-->
+</ion-content>

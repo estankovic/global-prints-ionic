@@ -1,0 +1,12 @@
+:host {
+
+  .order-container {
+    display: flex;
+    flex-direction: column;
+
+    gp-order-card {
+      margin: .5em;
+    }
+
+  }
+}
