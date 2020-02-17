@@ -1,4 +1,5 @@
 <mat-card>
+  <h6 mat-card-header>{{order.id}}</h6>
   <mat-card-content>
     <div class="col">
       <div class="item">
@@ -8,13 +9,13 @@
 
       <div class="item">
         <div class="label">Date Issued</div>
-        <div class="value">{{ order.createAt }}</div>
+        <div class="value">{{ order.createAt | date}}</div>
       </div>
     </div>
     <div class="col">
-      <div class="item status">
+      <div class="item">
         <div class="label">Status</div>
-        <div class="value">{{ order.status }}</div>
+        <div class="value {{order.status}}">{{ order.status }}</div>
       </div>
 
       <div class="item">

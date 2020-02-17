@@ -1,7 +1,9 @@
+import { firestore } from 'firebase';
+
 export interface CreatedAtField {
-  createAt: Date | string;
+  createAt: Date | firestore.Timestamp | string;
 }
 
 export interface ModifiedAtField {
-  modifiedAt: Date | string;
+  modifiedAt: Date | firestore.Timestamp | string;
 }

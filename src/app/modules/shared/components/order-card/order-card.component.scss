@@ -4,27 +4,31 @@
     flex-direction: row;
     justify-content: space-between;
 
-
     .col {
       display: flex;
       flex-direction: column;
     }
 
     .item {
-
       margin-bottom: 1rem;
 
       .label {
         font-weight: bold;
       }
 
-      &.status {
-        .value {
+      .value {
+        &.REQUESTED {
+          color: orangered;
+        }
+
+        &.SHIPPED {
           color: green;
         }
-      }
 
+        &.CANCELLED {
+          color: darkred;
+        }
+      }
     }
   }
-
 }
